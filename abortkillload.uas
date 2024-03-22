@@ -1,0 +1,25 @@
+timeout=2
+sendln 'PCABORT'
+sendln 'PCABORT 2:'
+sendln 'PCABORT 3:'
+sendln 'ABORT'
+sleep=3
+sendln 'PCKILL'
+wait 'Are you sure'
+sendln '1'
+sendln 'PCKILL 2:'
+wait 'Are you sure'
+sendln '1'
+sendln 'PCKILL 3:'
+wait 'Are you sure'
+sendln '1'
+sendln 'KILL'
+wait 'Are you sure'
+sendln '1'
+sleep=0.5
+timeout=10
+sendln 'LOAD autostart.as'
+wait 'File load'
+sendln 'LOAD programcontrol.as'
+wait 'File load'
+sendln 'LOAD posedata.pg'

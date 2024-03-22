@@ -1,0 +1,16 @@
+.PROGRAM homeRobot()
+    rollerHeight = 800
+    ACCURACY 1.000 ALWAYS
+    SPEED 100.0 MM/S ALWAYS
+    BASE TRANS(1.900,0.000,8.000,0.0000,0.0000,0.1400)
+    TOOL TRANS(72.114,193.386,512.986,90.5661,45.0010,1.0000)
+    ; Show Sawblade
+    DECOMPOSE currentPose[0] = HERE
+    IF currentPose[2] < rollerHeight THEN
+        LMOVE SHIFT(HERE BY 0,0,rollerHeight-currentPose[2])
+        JMOVE #[0, 0, -15, 0, -30, 0] ; Move to home
+    ELSE
+        JMOVE #[0, 0, -15, 0, -30, 0] ; Move to home
+    END
+    BASE NULL
+.END
