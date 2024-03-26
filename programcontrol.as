@@ -28,5 +28,4 @@
             BITS .outProgramRunning, 1 = 0
         END
     END
-    DELAY 5
 .END

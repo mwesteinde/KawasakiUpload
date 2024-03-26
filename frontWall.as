@@ -18,19 +18,5 @@
     ELSE
         PRINT "No lock"
     END
-
-    ; outToolSawblade = 
-    ; outToolHalfUpcut = 
-    ; outToolQuarterCompression = 
-    ; inToolSawblade = 
-    ; inToolHalfUpcut = 
-    ; inToolQuarterCompression =
-    ; WAIT SIG (-inToolHalfUpcut, -inToolSawblade, inToolQuarterCompression) ; Wait for quarter compression to be loaded
-    ; EXECUTE frontWallQuarter
-    ; WAIT SIG (inToolHalfUpcut, -inToolSawblade, -inToolQuarterCompression) ; Wait for half inch` to be loaded
-    ; EXECUTE frontWallHalf
-    ; WAIT SIG (-inToolHalfUpcut, inToolSawblade, inToolQuarterCompression)  ; Wait for sawblade to be loaded
-    ; EXECUTE frontWallSawbladeNS
-    ; EXECUTE frontWallSawbladeEW
-    DELAY 5
+    DELAY 1
  .END

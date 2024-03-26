@@ -1,6 +1,7 @@
 .PROGRAM changeTool(.currentTool, .requestedTool)
     .inToolReleased = 1008
     .inToolGrabbed = 1009
+    .inCurrentTool = 1010
     .outCurrentTool = 107
     .outRequestTool = 110
     .outReleaseTool = 113
@@ -9,20 +10,8 @@
     CALL homeRobot
     JMOVE #[45, 0, -15, 0, -30, 0] ; Move to good tool position
     BITS(.outRequestTool, 3) = .requestedTool
+    BITS(.outReleaseTool, 1) = 1
     WAIT .requestedTool == .inCurrentTool
+    BITS(.outGrabTool, 1) = 1
     CALL homeRobot
-
-    ; outToolSawblade = 
-    ; outToolHalfUpcut = 
-    ; outToolQuarterCompression = 
-    ; inToolSawblade = 
-    ; inToolHalfUpcut = 
-    ; inToolQuarterCompression =
-    ; WAIT SIG (-inToolHalfUpcut, -inToolSawblade, inToolQuarterCompression) ; Wait for quarter compression to be loaded
-    ; EXECUTE frontWallQuarter
-    ; WAIT SIG (inToolHalfUpcut, -inToolSawblade, -inToolQuarterCompression) ; Wait for half inch` to be loaded
-    ; EXECUTE frontWallHalf
-    ; WAIT SIG (-inToolHalfUpcut, inToolSawblade, inToolQuarterCompression)  ; Wait for sawblade to be loaded
-    ; EXECUTE frontWallSawbladeNS
-    ; EXECUTE frontWallSawbladeEW
  .END
