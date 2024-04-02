@@ -1,7 +1,7 @@
 .PROGRAM homeRobot()
     rollerHeight = 800
     ACCURACY 1.000 ALWAYS
-    SPEED 100.0 MM/S ALWAYS
+    SPEED 300.0 MM/S ALWAYS
     PRINT "HOME"
     DECOMPOSE currentPose[0] = HERE
     IF currentPose[2] < rollerHeight THEN

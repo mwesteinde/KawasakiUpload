@@ -4,6 +4,8 @@
 ; Convert HERE to decimal with DECOMPOSE pose[0] = HERE, then each element of pose is XYZOAT value
 ; Add 4000 for XYZ and 400 for OAT, USE ROUND or INT to make it integer
 ; Use BITS starting signal number, number of signals = decimal value 6-76
+
+; Decompose the tool value, set to the middle. Then add/subtract and figure out the whole angles thing
    DECOMPOSE .pose[0] = HERE
    .x = ROUND(.pose[0]) + 4000
    .y = ROUND(.pose[1]) + 4000
@@ -18,4 +20,12 @@
    BITS 49,10 = .o
    BITS 65,10 = .a
    BITS 81,10 = .t
+
+   DECOMPOSE .tool[0] = TOOL
+   .xtool = ROUND(.pose[0]) + 4000
+   .ytool = ROUND(.pose[1]) + 4000
+   .ztool = ROUND(.pose[2]) + 4000
+   .otool = ROUND(.pose[3]) + 400
+   .atool = ROUND(.pose[4]) + 400
+   .ttool = ROUND(.pose[5]) + 400
 .END

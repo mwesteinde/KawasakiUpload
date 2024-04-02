@@ -1,4 +1,5 @@
-inToolReleased = 1008
+inToolReleased = 1009
+inMotorOff = 1008
 inCurrentTool = 1011
 inSpindleOn = 1016
 outCurrentTool = 107
