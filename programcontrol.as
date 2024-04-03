@@ -2,8 +2,8 @@
     ; Define variables
     .numberProgramFrontWall = 1
     .numberProgramBackWall = 2
+    .numberProgramToolChange = 10
     .programBits = 4
-    outProgramRunning = 115
     SPEED 100.0 MM/S ALWAYS
     BITS outProgramRunning, 1 = 0
     IF SIG(inProgramHome) THEN
@@ -22,6 +22,11 @@
         IF .programrequest == .numberProgramBackWall THEN
             BITS outProgramRunning, 1 = 1
             CALL backWall
+            BITS outProgramRunning, 1 = 0
+        END
+        IF .programrequest == .numberProgramToolChange THEN
+            BITS outProgramRunning, 1 = 1
+            CALL changeTool(BITS(inCurrentTool, 3), BITS(inRequestedTool, 3), intoolAutoChange)
             BITS outProgramRunning, 1 = 0
         END
     END

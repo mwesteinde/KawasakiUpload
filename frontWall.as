@@ -1,12 +1,11 @@
 .PROGRAM frontWall()
+    inOptEcut = 1021
+    inOptGlassDoor = 1022
+    inOptDoorLock = 1023
     PRINT "frontwall"
 
     ;===========Quarter Inch tool===================
-    IF BITS(inCurrentTool, 3) <> 0 THEN
-        CALL changeTool(BITS(inCurrentTool, 3), 0, intoolAutoChange)
-    END
-
-    CALL WstFntWlDrQtr ;Quarter inch door cuts
+    CALL WstFntDrQtr ;Quarter inch door cuts
 
     IF -BITS(inOptEcut,1) THEN
         PRINT "Ecut"
@@ -15,12 +14,13 @@
         PRINT "No Ecut"
     END
 
-    CALL EstFntWlQuarter ;Quarter inch door cuts
-
+    CALL EstFntDrQtr ;Quarter inch door cuts
     ;===========Half Inch tool===================
-    CALL changeTool(0, 1, intoolAutoChange)
+    CALL changeTool(2, 4, intoolAutoChange)
     CALL WstFntDiscHf ;Cut out disc both sides
     CALL EstFntDiscHf ;Cut out disc both sides
+    CALL WstFntDiscHfLst
+    CALL WstFntDiscHfLst
 
     IF -BITS(inOptGlassDoor,1) THEN
         PRINT "Glass door"
@@ -28,16 +28,9 @@
         CALL EstFntGlassDrHf ;Glass door cut out with half inch bit
     ELSE
         PRINT "Wood door"
-        CALL WstFntWoodDrHf;Wood door cut out with half inch bit
+        CALL WstFntWdDrHf;Wood door cut out with half inch bit
         CALL WstFntHndlsHf;Handles roughing
-        CALL EstFntWoodDrHf;Wood door cut out with half inch bit
-    END
-
-    IF -BITS(inOptEcut,1) THEN
-        PRINT "Ecut"
-        CALL WstFntEcutHf;E-cut out with half inch bit
-    ELSE
-        PRINT "No Ecut"
+        CALL EstFntWdDrHf;Wood door cut out with half inch bit
     END
 
     IF -BITS(inOptDoorLock,1) THEN
@@ -48,7 +41,7 @@
     END
 
     ;===========Blade===================
-    CALL changeTool(1, 2, intoolAutoChange)
+    CALL changeTool(4, 0, intoolAutoChange)
 
     IF -BITS(inOptGlassDoor,1) THEN
         PRINT "Glass door"
@@ -62,7 +55,4 @@
         CALL WstFntWdDrBlNS;Wood door cut out north south with blade
         CALL WstFntHndlsBl;Handles blade
     END
-
-
-
  .END

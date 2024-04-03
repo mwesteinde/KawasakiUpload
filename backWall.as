@@ -1,4 +1,6 @@
 .PROGRAM backWall()
+    inOptWindow = 1021
+    inOptChimney = 1022
     PRINT "backwall"
     
     ;===========Half Inch tool===================
@@ -27,7 +29,7 @@
     END
 
     ;===========Blade===================
-    CALL changeTool(1, 2, , intoolAutoChange)
+    CALL changeTool(1, 2, intoolAutoChange)
     IF BITS(inOptWindow,1) THEN
         PRINT "STDWindow"
         CALL WstBckSTDWnBLNS
