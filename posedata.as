@@ -6,26 +6,23 @@
 ; Use BITS starting signal number, number of signals = decimal value 6-76
 
 ; Decompose the tool value, set to the middle. Then add/subtract and figure out the whole angles thing
-   DECOMPOSE .pose[0] = HERE
-   .x = ROUND(.pose[0]) + 4000
-   .y = ROUND(.pose[1]) + 4000
-   .z = ROUND(.pose[2]) + 4000
-   .o = ROUND(.pose[3]) + 400
-   .a = ROUND(.pose[4]) + 400
-   .t = ROUND(.pose[5]) + 400
+   HERE #pose
+   DECOMPOSE .joints[0] = #pose
+   .jt1 = ROUND(.joints[0]*100) + 40000
+   .jt2 = ROUND(.joints[1]*100) + 40000
+   .jt3 = ROUND(.joints[2]*100) + 40000
+   .jt4 = ROUND(.joints[3]*100) + 40000
+   .jt5 = ROUND(.joints[4]*100) + 40000
+   .jt6 = ROUND(.joints[5]*100) + 40000
    
-   BITS 1,13 = .x 
-   BITS 17,13 = .y
-   BITS 33,13 = .z
-   BITS 49,10 = .o
-   BITS 65,10 = .a
-   BITS 81,10 = .t
+   BITS 1,16 = .jt1 
+   BITS 17,16 = .jt2
+   BITS 33,16 = .jt3
+   BITS 49,16 = .jt4
+   BITS 65,16 = .jt5
+   BITS 81,16 = .jt6
 
-   DECOMPOSE .tool[0] = TOOL
-   .xtool = ROUND(.pose[0]) + 4000
-   .ytool = ROUND(.pose[1]) + 4000
-   .ztool = ROUND(.pose[2]) + 4000
-   .otool = ROUND(.pose[3]) + 400
-   .atool = ROUND(.pose[4]) + 400
-   .ttool = ROUND(.pose[5]) + 400
+   DECOMPOSE .toolzheight[0] = HERE
+   .ztool = ROUND(.toolzheight[2]) + 4000
+   BITS 129,16 = .ztool 
 .END
