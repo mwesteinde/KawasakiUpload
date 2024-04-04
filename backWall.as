@@ -4,19 +4,15 @@
     PRINT "backwall"
     
     ;===========Half Inch tool===================
-    IF BITS(.inCurrentTool, 3) <> 1 THEN
-        CALL changeTool(BITS(.inCurrentTool, 3), 1, intoolAutoChange)
-    END
-
     CALL WstBckDiscHf ;Cut out disc both sides
     CALL WstBckVentHf
     CALL EstBckDiscHf ;Cut out disc both sides
-    CALL WstBckVentHf
+    CALL EstBckVentHf
 
     IF BITS(inOptWindow,1) THEN
         PRINT "STDWindow"
         CALL WstBckSTDWnHf
-        CALL EstBckSTDWndf
+        CALL EstBckSTDWnHf
     ELSE
         PRINT "NoWindow"
     END
@@ -29,7 +25,7 @@
     END
 
     ;===========Blade===================
-    CALL changeTool(1, 2, intoolAutoChange)
+    CALL changeTool(4, 0, intoolAutoChange)
     IF BITS(inOptWindow,1) THEN
         PRINT "STDWindow"
         CALL WstBckSTDWnBLNS
