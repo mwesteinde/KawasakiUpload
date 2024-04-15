@@ -1,0 +1,18 @@
+timeout=240
+
+sendln 'LOAD robodkpaths\Tstcthf2ps30.pg'
+wait 'File load'
+sendln 'LOAD robodkpaths\Tstcthf2ps54.pg'
+wait 'File load'
+sendln 'LOAD robodkpaths\Tstcthf3ps54.pg'
+wait 'File load'
+sendln 'LOAD robodkpaths\Tstcthfhorz.pg'
+wait 'File load'
+sendln 'LOAD robodkpaths\tstctsaw5400.pg'
+wait 'File load'
+sendln 'LOAD robodkpaths\tstctsaw3600.pg'
+wait 'File load'
+sendln 'LOAD robodkpaths\TstctSaw6000.pg'
+wait 'File load'
+sendln 'LOAD robodkpaths\Tstctsawhorz.pg'
+wait 'File load'

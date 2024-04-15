@@ -25,14 +25,16 @@
     END
 
     ;===========Blade===================
-    CALL changeTool(4, 0, intoolAutoChange)
+    
     IF BITS(inOptWindow,1) THEN
+        CALL changeTool(4, 0, intoolAutoChange)
         PRINT "STDWindow"
+        CALL WstBckSTDWnBLEW
         CALL WstBckSTDWnBLNS
+        CALL EstBckSTDWnBLNS
         CALL EstBckSTDWnBLEW
     ELSE
         PRINT "NoWindow"
     END
-
-
+    CALL homeRobot
  .END

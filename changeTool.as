@@ -1,21 +1,22 @@
 .PROGRAM changeTool(.currentTool, .requestedTool, .isAuto)
     SPEED 500.0 MM/S ALWAYS
-    TOOL TRANS(-1.572,133.945,455.303,90.0000,45.0000,0.0000)
+    TOOL TRANS(74.135, 193.39, 512.99, 89.944, 45.018, 1.472)
     BASE TRANS(0.0000,0.0000,0.000,0.0000,0.0000,0.0000)
-;     0: Quarter inch
-;     1: Half Inch
-;     2: Sawblade
-;     3: Dovetail
-;     4: Half inch ball
-;     5: Quarter inch ball
+;     0: Sawblade
+;     1: 
+;     2: Quarter Inch
+;     3: 
+;     4: Half inch
+;     5: 
+; Defined
+; toolpose[0-8]
+; changeToolHome
     PRINT .currentTool
     PRINT .requestedTool
 
     POINT .approach = TRANS(100, 0, 0, 0, 0, 0)
     POINT .retract = TRANS(0, 0, -100, 0, 0, 0)
-    ; To define
-    ; toolpose[0-8]
-    ; changeToolHome
+
     BITS outRequestTool,3 = .requestedTool 
     IF .currentTool <> .requestedTool THEN
         CALL homeRobot
