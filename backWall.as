@@ -5,8 +5,10 @@
     
     ;===========Half Inch tool===================
     CALL WstBckDiscHf ;Cut out disc both sides
+    CALL wstbckwngmark
     CALL WstBckVentHf
     CALL EstBckDiscHf ;Cut out disc both sides
+    CALL estbckwngmark
     CALL EstBckVentHf
 
     IF BITS(inOptWindow,1) THEN
