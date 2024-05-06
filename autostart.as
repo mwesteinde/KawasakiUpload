@@ -19,6 +19,11 @@
     outRequestTool = 110 ; 110-112
     outReleaseTool = 113
     outProgramRunning = 115
+    outProgramNumber = 116 ; TODO: change dedicated input
+    ;outzpose is 129-144
+    ;outtoolx is 145-156
+    ;outtooly is 157-168
+    ;outtoolz is 169-180
     
     inTurnMotorOn = 1001 ; Dedicated input signal
     inResetError = 1002 ; Dedicated input
@@ -33,16 +38,19 @@
     inEStopOff = 1014 ; Dedicated input, disabled
     intoolAutoChange = 1015 ; Should be always true
     inSpindleOn = 1016
-    inProgramChoice = 1017 ; 1017-1020 TODO: Make 4 bits
+    inProgramChoice = 1017 ;
     inProgramOption1 = 1021
     inProgramOption2 = 1022
     inProgramOption3 = 1023
     inRequestedTool = 1024 ; 1024-1026 TODO: Make 4 bits
+    inProgramStop = 1027
     
     PCABORT 2:
+    PCABORT 3:
     PCEXECUTE 2: posedata.pc, -1 ; Executes pose data continuously
+    PCEXECUTE 3: toolcheck.pc, -1 ; Executes tool data continuously
     ; WAIT SIG(1012) ; E stop ethercat
     WAIT SWITCH(POWER)
     WAIT NOT SIG(98)
-    MC EXECUTE progcontrol, -1
+    MC EXECUTE pg00, -1
 .END

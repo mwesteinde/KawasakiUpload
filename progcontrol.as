@@ -1,4 +1,4 @@
-.PROGRAM progcontrol()
+.PROGRAM pg00()
     ; Define variables
     .numberProgramFrontWall = 1
     .numberProgramBackWall = 2
@@ -7,6 +7,7 @@
     .programBits = 4
     SPEED 100.0 MM/S ALWAYS
     BITS outProgramRunning, 1 = 0
+    
     IF SIG(inProgramHome) THEN
         BITS outProgramRunning, 1 = 1
         CALL homeRobot

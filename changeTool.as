@@ -1,5 +1,5 @@
 .PROGRAM changeTool(.currentTool, .requestedTool, .isAuto)
-    SPEED 500.0 MM/S ALWAYS
+    SPEED 700.0 MM/S ALWAYS
     TOOL TRANS(74.135, 193.39, 512.99, 89.944, 45.018, 1.472)
     BASE TRANS(0.0000,0.0000,0.000,0.0000,0.0000,0.0000)
 ;     0: Sawblade
@@ -41,7 +41,7 @@
             ;Pick up tool
             FOR index=0 TO 6
                 IF .requestedTool == index THEN
-                    SPEED 200.0 MM/S ALWAYS
+                    SPEED 400.0 MM/S ALWAYS
                     JMOVE toolpose[index] + .retract
                     BITS outReleaseTool, 1 = 1
                     WAIT SIG(inToolReleased)
@@ -61,7 +61,7 @@
             WAIT .requestedTool == inCurrentTool
             BITS outReleaseTool, 1 = 0
         END
-        SPEED 200 MM/S ALWAYS
+        SPEED 400 MM/S ALWAYS
         JMOVE changeToolHome
         CALL homeRobot
         BITS outCurrentTool, 3 = .requestedTool

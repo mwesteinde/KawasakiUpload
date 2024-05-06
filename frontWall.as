@@ -5,15 +5,22 @@
     PRINT "frontwall"
 
     ;===========Quarter Inch tool==================
+    ; IF -BITS(inOptEcut,1) THEN
+    ;     PRINT "Ecut"
+    ;     CALL WstFntEcutQtr;E-cut out with quarter inch bit
+    ; ELSE
+    ;     PRINT "No Ecut"
+    ; END
+
+    ; ;===========Half Inch tool===================
+    ; CALL changeTool(2, 4, intoolAutoChange)
+
     IF -BITS(inOptEcut,1) THEN
         PRINT "Ecut"
-        CALL WstFntEcutQtr;E-cut out with quarter inch bit
+        CALL WstFntEcutHf;E-cut out with quarter inch bit
     ELSE
         PRINT "No Ecut"
     END
-
-    ;===========Half Inch tool===================
-    CALL changeTool(2, 4, intoolAutoChange)
 
     IF BITS(inOptGlassDoor,1) == 0 THEN
         PRINT "Wood door"
