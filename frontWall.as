@@ -5,6 +5,7 @@
     PRINT "frontwall"
 
     ;===========Quarter Inch tool==================
+    ; firstTool = 2
     ; IF -BITS(inOptEcut,1) THEN
     ;     PRINT "Ecut"
     ;     CALL WstFntEcutQtr;E-cut out with quarter inch bit
@@ -14,7 +15,8 @@
 
     ; ;===========Half Inch tool===================
     ; CALL changeTool(2, 4, intoolAutoChange)
-
+    ; inFirstTool = 4
+    ; WAIT SIG(inProgramStart)
     IF -BITS(inOptEcut,1) THEN
         PRINT "Ecut"
         CALL WstFntEcutHf;E-cut out with quarter inch bit
