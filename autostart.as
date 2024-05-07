@@ -43,7 +43,7 @@
     inProgramOption2 = 1022
     inProgramOption3 = 1023
     inRequestedTool = 1024 ; 1024-1026 TODO: Make 4 bits
-    inProgramStop = 1027
+    inProgramSelected = 1027 ;Flag for when program is selected
     
     PCABORT 2:
     PCABORT 3:
