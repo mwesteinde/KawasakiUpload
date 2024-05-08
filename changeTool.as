@@ -8,16 +8,17 @@
 ;     3: 
 ;     4: Half inch
 ;     5: 
-; Defined
-; toolpose[0-8]
-; changeToolHome
+;       8: no tool
+;   Defined
+;   toolpose[0-8]
+;   changeToolHome
     PRINT .currentTool
     PRINT .requestedTool
 
     POINT .approach = TRANS(100, 0, 0, 0, 0, 0)
     POINT .retract = TRANS(0, 0, -100, 0, 0, 0)
 
-    BITS outRequestTool,3 = .requestedTool 
+    BITS outRequestTool,4 = .requestedTool 
     IF .currentTool <> .requestedTool THEN
         CALL homeRobot
         ;Automatic tool change
@@ -26,7 +27,7 @@
         JMOVE changeToolHome
         SPEED 400.0 MM/S ALWAYS
         WAIT NOT BITS(inSpindleOn, 1)
-        FOR index=0 TO 6
+        FOR index=0 TO 6 ;TODO: Test 0-7 tools
             IF .currentTool == index THEN
                 JMOVE toolpose[index] + .approach
                 SPEED 20 MM/s ALWAYS
@@ -56,6 +57,6 @@
         JMOVE changeToolHome
         SPEED 1000 MM/S ALWAYS
         CALL homeRobot
-        BITS outCurrentTool, 3 = .requestedTool
+        BITS outCurrentTool, 4 = .requestedTool
     END
  .END

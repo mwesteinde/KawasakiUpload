@@ -15,11 +15,10 @@
     outPoseDataSent = 104
     outEStop = 105
     outBatteryAlarm = 106
-    outCurrentTool = 107 ; 107-109
-    outRequestTool = 110 ; 110-112
-    outReleaseTool = 113
-    outProgramRunning = 115
-    outProgramNumber = 116 ; TODO: change dedicated input
+    outCurrentTool = 107 ; 107-110 //CHANGED
+    outRequestTool = 111 ; 111-114 //CHANGED
+    outReleaseTool = 115 ;//CHANGEd
+    outProgramRunning = 116 ;//CHANGEd
     outToolUpdated = 117
     outStartofProgram = 118
     ;outzpose is 129-144
@@ -36,15 +35,15 @@
     inProgramHome = 1007
     inMotorOff = 1008
     inToolReleased = 1009
-    inCurrentTool = 1011 ; 1011-1013
-    inEStopOff = 1014 ; Dedicated input, disabled
+    inCurrentTool = 1010 ; 1010-1013 //CHANGED
+    inEStopOff = 1014 ; Dedicated input
     inSpindleOn = 1016
     inProgramChoice = 1017 ;
     inProgramOption1 = 1021
     inProgramOption2 = 1022
     inProgramOption3 = 1023
-    inRequestedTool = 1024 ; 1024-1026 TODO: Make 4 bits
-    inProgramSelected = 1027 ;Flag for when program is selected
+    inRequestedTool = 1024 ; 1024-1027 TODO: Make 4 bits
+    inProgramSelected = 1028 ;Flag for when program is selected
     
     PCABORT 2:
     PCABORT 3:

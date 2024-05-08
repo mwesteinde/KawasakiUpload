@@ -21,7 +21,7 @@
     IF SIG(inProgramStart) THEN
         IF .programrequest == .numberProgramToolChange THEN
             BITS outProgramRunning, 1 = 1
-            CALL changeTool(BITS(inCurrentTool, 3), BITS(inRequestedTool, 3))
+            CALL changeTool(BITS(inCurrentTool, 4), BITS(inRequestedTool, 4))
             BITS outProgramRunning, 1 = 0
         END
     END

@@ -6,15 +6,12 @@
 
     ;MUST have next three lines in all programs!
     .firstToolIndex = 4 ;First tool - 4 for half inch, 2 quarter, 0 sawblade
-    BITS outRequestTool, 3 = .firstToolIndex
+    BITS outRequestTool, 4 = .firstToolIndex
     BITS outToolUpdated, 1 = 1
     WAIT SIG(inProgramStart)
     BITS outToolUpdated, 1 = 0
     BITS outProgramRunning, 1 = 1
 
-    ; outFirstTool = 4
-    ; WAIT SIG(inProgramStart)
-    ; BITS outProgramRunning, 1 = 1
     ;===========Quarter Inch tool==================
     ; outfirstTool = 2
     ; IF -BITS(inOptEcut,1) THEN
@@ -24,7 +21,7 @@
     ;     PRINT "No Ecut"
     ; END
 
-    ; ;===========Half Inch tool===================
+    ;===========Half Inch tool===================
     ; CALL changeTool(2, 4)
     
     IF -BITS(inOptEcut,1) THEN
@@ -44,7 +41,7 @@
     ; CALL WstFntDiscHfLst
     CALL EstFntDiscHf ;Cut out disc both sides
     CALL estfntwngmrk
-    CALL EstFntDiscHfLst
+    ; CALL EstFntDiscHfLst
 
     IF -BITS(inOptGlassDoor,1) THEN
         PRINT "Glass door"
@@ -60,13 +57,14 @@
 
     IF -BITS(inOptDoorLock,1) THEN
         PRINT "Lock"
-        CALL EstFntLockHf; Lock cut out with half inch bit
+        CALL WstFntLockHf; Lock cut out with half inch bit
+        CALL WstFntLockHf1; Lock cut out with half inch bit
     ELSE
         PRINT "No lock"
     END
 
     ;===========Blade===================
-    CALL changeTool(4, 0, intoolAutoChange)
+    CALL changeTool(4, 0)
 
     IF -BITS(inOptGlassDoor,1) THEN
         PRINT "Glass door"
