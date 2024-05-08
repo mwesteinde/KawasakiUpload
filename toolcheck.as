@@ -11,4 +11,10 @@
    BITS 145,12 = .xtool 
    BITS 157,12 = .ytool
    BITS 169,12 = .ztool
+
+   IF SYSDATA(STEP) == 1 THEN
+      BITS outStartofProgram, 1 = 1
+   ELSE
+      BITS outStartofProgram, 1 = 0
+   END
 .END

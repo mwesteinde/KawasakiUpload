@@ -20,6 +20,8 @@
     outReleaseTool = 113
     outProgramRunning = 115
     outProgramNumber = 116 ; TODO: change dedicated input
+    outToolUpdated = 117
+    outStartofProgram = 118
     ;outzpose is 129-144
     ;outtoolx is 145-156
     ;outtooly is 157-168
@@ -36,7 +38,6 @@
     inToolReleased = 1009
     inCurrentTool = 1011 ; 1011-1013
     inEStopOff = 1014 ; Dedicated input, disabled
-    intoolAutoChange = 1015 ; Should be always true
     inSpindleOn = 1016
     inProgramChoice = 1017 ;
     inProgramOption1 = 1021

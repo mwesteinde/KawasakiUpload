@@ -4,6 +4,14 @@
     inOptDoorLock = 1023
     PRINT "frontwall"
 
+    ;MUST have next three lines in all programs!
+    .firstToolIndex = 4 ;First tool - 4 for half inch, 2 quarter, 0 sawblade
+    BITS outRequestTool, 3 = .firstToolIndex
+    BITS outToolUpdated, 1 = 1
+    WAIT SIG(inProgramStart)
+    BITS outToolUpdated, 1 = 0
+    BITS outProgramRunning, 1 = 1
+
     ; outFirstTool = 4
     ; WAIT SIG(inProgramStart)
     ; BITS outProgramRunning, 1 = 1
@@ -17,7 +25,7 @@
     ; END
 
     ; ;===========Half Inch tool===================
-    ; CALL changeTool(2, 4, intoolAutoChange)
+    ; CALL changeTool(2, 4)
     
     IF -BITS(inOptEcut,1) THEN
         PRINT "Ecut"
@@ -46,8 +54,8 @@
         PRINT "Wood door"
         CALL WstFntWdDrHf;Wood door cut out with half inch bit
         CALL WstFntWdDrHfLst
-        ; CALL EstFntWdDrHf;Wood door cut out with half inch bit
-        ; CALL EstFntWdDrHfLst
+        CALL EstFntWdDrHf;Wood door cut out with half inch bit
+        CALL EstFntWdDrHfLst
     END
 
     IF -BITS(inOptDoorLock,1) THEN

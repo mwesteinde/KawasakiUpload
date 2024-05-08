@@ -4,9 +4,12 @@
     PRINT "backwall"
 
     ;MUST have next three lines in all programs!
-    ; .firstToolIndex = 4 ;First tool - 4 for half inch, 2 quarter, 0 sawblade
-    ; BITS outFirstTool, 4 = .firstToolIndex
-    ; WAIT SIG(inProgramStart)
+    .firstToolIndex = 4 ;First tool - 4 for half inch, 2 quarter, 0 sawblade
+    BITS outRequestTool, 3 = .firstToolIndex
+    BITS outToolUpdated, 1 = 1
+    WAIT SIG(inProgramStart)
+    BITS outToolUpdated, 1 = 0
+    BITS outProgramRunning, 1 = 1
 
     ;===========Half Inch tool===================
     CALL WstBckDiscHf ;Cut out disc both sides

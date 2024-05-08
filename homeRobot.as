@@ -2,7 +2,7 @@
     rollerHeight = 800
     BASE TRANS(0.0000,0.0000,0.000,0.0000,0.0000,0.0000)
     ACCURACY 1.000 ALWAYS
-    SPEED 300.0 MM/S ALWAYS
+    SPEED 500.0 MM/S ALWAYS
     PRINT "HOME"
     DECOMPOSE currentPose[0] = HERE
     IF currentPose[2] < rollerHeight THEN
