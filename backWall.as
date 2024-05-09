@@ -37,7 +37,7 @@
     ;===========Blade===================
     
     IF BITS(inOptWindow,1) THEN
-        CALL changeTool(4, 0, intoolAutoChange)
+        CALL changeTool(4, 0)
         PRINT "STDWindow"
         CALL WstBckSTDWnBLEW
         CALL WstBckSTDWnBLNS
