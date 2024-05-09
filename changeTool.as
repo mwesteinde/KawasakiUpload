@@ -1,4 +1,5 @@
 .PROGRAM changeTool(.currentTool, .requestedTool)
+    BITS outRequestTool,4 = .requestedTool 
     SPEED 1000.0 MM/S ALWAYS
     TOOL TRANS(74.135, 193.39, 512.99, 89.944, 45.018, 1.472)
     BASE TRANS(0.0000,0.0000,0.000,0.0000,0.0000,0.0000)
@@ -18,7 +19,6 @@
     POINT .approach = TRANS(100, 0, 0, 0, 0, 0)
     POINT .retract = TRANS(0, 0, -100, 0, 0, 0)
 
-    BITS outRequestTool,4 = .requestedTool 
     IF .currentTool <> .requestedTool THEN
         CALL homeRobot
         ;Automatic tool change
@@ -57,6 +57,6 @@
         JMOVE changeToolHome
         SPEED 1000 MM/S ALWAYS
         CALL homeRobot
-        BITS outCurrentTool, 4 = .requestedTool
     END
+    BITS outCurrentTool, 4 = .requestedTool
  .END
