@@ -22,6 +22,7 @@
     outToolUpdated = 117
     outStartofProgram = 118
     outCurrentProgram = 119 ;119-122
+    outAtClean = 123 ; Dedicated output
     ;outzpose is 129-144
     ;outtoolx is 145-156
     ;outtooly is 157-168

@@ -4,6 +4,7 @@
     .numProgFrontWall = 1
     .numProgBackWall = 2
     .numOption3 = 3
+    .numOption4 = 4
     .numProgToolChg = 10
     .numProgMoveRbt = 11
     .numProgHomeRbt = 12
@@ -15,6 +16,7 @@
     ;Read requested program
     BITS outCurrentProgram, 4 = 0 ; Current program is programcontrol
     .programRequest = BITS(inProgramChoice, .programBits)
+    BREAK
     
     ; IF SIG(inProgramHome) THEN
     ;     BITS outProgRunning, 1 = 1
@@ -72,6 +74,11 @@
         IF .programrequest == .numOption3 THEN
             BITS outCurrentProgram, 4 = .numOption3   
             CALL Option3
+            BITS outProgRunning, 1 = 0
+        END
+        IF .programrequest == .numOption4 THEN
+            BITS outCurrentProgram, 4 = .numOption4   
+            CALL Option4
             BITS outProgRunning, 1 = 0
         END
     END
