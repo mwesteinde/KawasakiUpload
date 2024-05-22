@@ -25,4 +25,21 @@
    DECOMPOSE .toolzheight[0] = HERE
    .ztool = ROUND(.toolzheight[2]) + 4000
    BITS 129,16 = .ztool 
+
+; Send current tool coordinates to PLC
+   DECOMPOSE .currenttool[0] = TOOL
+   .xtool = ROUND(.currenttool[0]) + 4094/2
+   .ytool = ROUND(.currenttool[1]) + 4094/2
+   .ztool = ROUND(.currenttool[2]) + 4094/2
+
+   BITS 145,12 = .xtool 
+   BITS 157,12 = .ytool
+   BITS 169,12 = .ztool
+
+; Send flag if at the start of program
+   IF SYSDATA(STEP) == 1 THEN
+      BITS outStartofProgram, 1 = 1
+   ELSE
+      BITS outStartofProgram, 1 = 0
+   END
 .END

@@ -1,5 +1,5 @@
 .PROGRAM backWall()
-    inOptWindow = 1021
+    inOptWindow = 1021 ;Bit addresses for window option
     inOptChimney = 1022
     PRINT "backwall"
 
@@ -9,14 +9,14 @@
     BITS outToolUpdated, 1 = 1
     WAIT SIG(inProgramStart)
     BITS outToolUpdated, 1 = 0
-    BITS outProgramRunning, 1 = 1
+    BITS outProgRunning, 1 = 1
 
     ;===========Half Inch tool===================
     CALL WstBckDiscHf ;Cut out disc both sides
-    CALL wstbckwngmark
+    CALL WstBckWngMrkHf
     CALL WstBckVentHf
     CALL EstBckDiscHf ;Cut out disc both sides
-    CALL estbckwngmark
+    CALL EstBckWngMrkHf
     CALL EstBckVentHf
 
     IF BITS(inOptWindow,1) THEN
@@ -25,13 +25,6 @@
         CALL EstBckSTDWnHf
     ELSE
         PRINT "NoWindow"
-    END
-    IF BITS(inOptChimney,1) THEN
-        PRINT "Chimney"
-        CALL WstBckChimyHf
-        CALL EstBckChimyHf
-    ELSE
-        PRINT "NoChimney"
     END
 
     ;===========Blade===================
@@ -43,6 +36,7 @@
         CALL WstBckSTDWnBLNS
         CALL EstBckSTDWnBLNS
         CALL EstBckSTDWnBLEW
+        CALL changeTool(0, 4)
     ELSE
         PRINT "NoWindow"
     END

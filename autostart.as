@@ -18,9 +18,10 @@
     outCurrentTool = 107 ; 107-110 //CHANGED
     outRequestTool = 111 ; 111-114 //CHANGED
     outReleaseTool = 115 ;//CHANGEd
-    outProgramRunning = 116 ;//CHANGEd
+    outProgRunning = 116 ;//CHANGEd
     outToolUpdated = 117
     outStartofProgram = 118
+    outCurrentProgram = 119 ;119-122
     ;outzpose is 129-144
     ;outtoolx is 145-156
     ;outtooly is 157-168
@@ -35,22 +36,27 @@
     inProgramHome = 1007
     inMotorOff = 1008
     inToolReleased = 1009
-    inCurrentTool = 1010 ; 1010-1013 //CHANGED
+    inCurrentTool = 1010 ; 1010-1013
     inEStopOff = 1014 ; Dedicated input
-    inSpindleOn = 1016
-    inProgramChoice = 1017 ;
-    inProgramOption1 = 1021
-    inProgramOption2 = 1022
-    inProgramOption3 = 1023
-    inRequestedTool = 1024 ; 1024-1027 TODO: Make 4 bits
-    inProgramSelected = 1028 ;Flag for when program is selected
+    inSpindleOff = 1016
+    inProgramChoice = 1017 ;1017-1020
+    inProgOption1 = 1021
+    inProgOption2 = 1022
+    inProgOption3 = 1023
+    inRequestedTool = 1024 ; 1024-1027
+    inProgSelected = 1028 ;Flag for when program is selected
+    inProgramClean = 1029
+    inxmove = 1030
+    inymove = 1031
+    inzmove = 1032
+    inmovepositive = 1033
+    inWoodWidth51 = 1034 ;1 if wood width is 5.1inches, 0 if wood width is 4.75in
     
     PCABORT 2:
     PCABORT 3:
     PCEXECUTE 2: posedata.pc, -1 ; Executes pose data continuously
-    PCEXECUTE 3: toolcheck.pc, -1 ; Executes tool data continuously
-    ; WAIT SIG(1012) ; E stop ethercat
+    WAIT SIG(inEStopOff) ; E stop ethercat
     WAIT SWITCH(POWER)
-    WAIT NOT SIG(98)
+    WAIT NOT SIG(outError)
     MC EXECUTE pg00, -1
 .END
