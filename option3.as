@@ -6,10 +6,6 @@ BITS outToolUpdated, 1 = 1
 WAIT SIG(inProgramStart)
 BITS outToolUpdated, 1 = 0
 BITS outProgRunning, 1 = 1
-
-CALL WstBckSTDWnBLEW
-
-
+CALL wstcbfnttrace77
 CALL homeRobot
-CALL changeTool(0, 4)
 .END

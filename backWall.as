@@ -39,6 +39,6 @@
         CALL changeTool(0, 4)
     ELSE
         PRINT "NoWindow"
+        CALL homeRobot
     END
-    CALL homeRobot
  .END

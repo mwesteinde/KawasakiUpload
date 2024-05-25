@@ -26,6 +26,7 @@
         JMOVE changeToolHome
         SPEED 400.0 MM/S ALWAYS
         WAIT BITS(inSpindleOff, 1)
+        WAIT BITS(inDustBootUp, 1)
         FOR index=0 TO 6 ;TODO: Test 0-7 tools
             IF .currentTool == index THEN
                 JMOVE toolpose[index] + .approach

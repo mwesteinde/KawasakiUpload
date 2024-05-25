@@ -23,7 +23,7 @@
    BITS 81,16 = .jt6
 
    DECOMPOSE .toolzheight[0] = HERE
-   .ztool = ROUND(.toolzheight[2]) + 4000
+   .ztool = ROUND(.toolzheight[2]*10) + 30000
    BITS 129,16 = .ztool 
 
 ; Send current tool coordinates to PLC

@@ -1,64 +1,146 @@
 timeout=240
+sendln 'PCABORT'
+sendln 'PCABORT 2:'
+sendln 'PCABORT 3:'
+sendln 'ABORT'
+sendln 'PCKILL'
+sleep=1
+sendln '1'
+sendln 'PCKILL 2:'
+sleep=1
+sendln '1'
+sendln 'PCKILL 3:'
+sleep=1
+sendln '1'
+sendln 'KILL'
+sleep=1
+sendln '1'
+
 sendln 'LOAD robodkpaths\WstFntDischf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntEcuthf51.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntEcuthf475.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntHndlsHf51.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntHndlsBl51.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntHndlsHf475.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntHndlsBl475.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntDischflst.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntWdDrHf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntGlassDrHf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntWdDrBlNS.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntWdDrBlEW.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntGlsDrBlNS.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntGlsDrBlEW.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstFntWdDrHflst.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\Wstfntwngmrkhf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\Wstfntlockhf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 
 sendln 'LOAD robodkpaths\EstFntDiscHfLst.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntWdDrHf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntGlassDrHf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntWdDrBLNS.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntWdDrBLEW.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntGlsDrBLNS.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntGlsDrBLEW.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntDiscHf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntWngMrkHf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntHndlsBl51.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntHndlsBl475.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntWdDrHfLst.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntHndlsHf51.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstFntHndlsHf475.pg'
+sleep=1
+timeout=120
 wait 'File load'
+
+sendln 'PCEXECUTE autostart.pc'
+messagebox 'All paths loaded successfully'

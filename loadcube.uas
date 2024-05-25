@@ -1,0 +1,66 @@
+timeout=240
+sendln 'PCABORT'
+sendln 'PCABORT 2:'
+sendln 'PCABORT 3:'
+sendln 'ABORT'
+sendln 'PCKILL'
+sleep=1
+sendln '1'
+sendln 'PCKILL 2:'
+sleep=1
+sendln '1'
+sendln 'PCKILL 3:'
+sleep=1
+sendln '1'
+sendln 'KILL'
+sleep=1
+sendln '1'
+
+sendln 'LOAD robodkpaths\estcbedgebl.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfntedgebl.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\estcbedgehf.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\estcbtopegehf.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfntedgehf.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfnttopegehf.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfntdoorhf.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfntdoorblns.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfntdoorblew.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfnthndlsbl.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfnthndlshf.pg'
+sleep=1
+timeout=120
+wait 'File load'
+
+
+sendln 'PCEXECUTE autostart.pc'
+messagebox 'All paths loaded successfully'

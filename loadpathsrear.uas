@@ -1,26 +1,56 @@
-timeout=240
+timeout=120
+sendln 'PCABORT'
+sendln 'PCABORT 2:'
+sendln 'PCABORT 3:'
+sendln 'ABORT'
+sendln 'PCKILL'
+sendln '1'
+sendln 'PCKILL 2:'
+sendln '1'
+sendln 'PCKILL 3:'
+sendln '1'
+sendln 'KILL'
+sendln '1'
+
 sendln 'LOAD robodkpaths\WstBckDiscHf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstBckSTDWnHf.pg'
+sleep=1
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstBckSTDWnBLNS.pg'
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstBckSTDWnBLEW.pg'
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstBckVentHf.pg'
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\WstBckWngMrkHf.pg'
+timeout=120
 wait 'File load'
-
 
 sendln 'LOAD robodkpaths\EstBckSTDWnHf.pg'
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstBckSTDWnBLNS.pg'
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstBckSTDWnBLEW.pg'
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstBckDiscHf.pg'
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstBckVentHf.pg'
+timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstBckWngMrkHf.pg'
+timeout=120
+
+wait 'File load'
+sendln 'PCEXECUTE autostart.pc'
+messagebox 'All paths loaded successfully'

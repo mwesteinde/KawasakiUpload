@@ -33,7 +33,7 @@
             CALL EstFntHndlsHf51
         ELSE
             CALL WstFntHndlsHf475
-            CALL WstFntHndlsHf475
+            CALL EstFntHndlsHf475
         END
     END
 
