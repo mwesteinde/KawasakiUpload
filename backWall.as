@@ -16,8 +16,10 @@
     CALL WstBckWngMrkHf
     CALL WstBckVentHf
     CALL EstBckDiscHf ;Cut out disc both sides
-    CALL EstBckWngMrkHf
+    CALL estfntdischfbot
     CALL EstBckVentHf
+    CALL EstBckWngMrkHf
+    CALL estfntdischftop
 
     IF BITS(inOptWindow,1) THEN
         PRINT "STDWindow"

@@ -50,7 +50,12 @@ timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\EstBckWngMrkHf.pg'
 timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\Estfntdischftop.pg'
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\Estfntdischfbot.pg'
+timeout=120
 
 wait 'File load'
-sendln 'PCEXECUTE autostart.pc'
 messagebox 'All paths loaded successfully'

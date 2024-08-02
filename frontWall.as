@@ -45,12 +45,13 @@
     CALL wstfntwngmrkhf
     
     CALL EstFntDiscHf ;Cut out disc both sides
+    CALL estfntdischftop
     IF BITS(inWoodWidth51,1) == 0 THEN
         CALL EstFntDiscHfLst
     END
 
     CALL estfntwngmrkhf
-
+    CALL estfntdischfbot
     IF -BITS(inOptGlassDoor,1) THEN
         PRINT "Glass door"
         CALL WstFntGlassDrHf ;Glass door cut out with half inch bit
