@@ -2,7 +2,8 @@
     ;Signals from PLC addresses
     inOptEcut = 1021
     inOptGlassDoor = 1022
-    inOptDoorLock = 1023
+    inOptHandles = 1023
+    inOptHalfMoon = 1039
     PRINT "frontwall"
 
     ;MUST have next six lines in all programs! Only change first tool index
@@ -26,8 +27,8 @@
         PRINT "No Ecut"
     END
 
-    IF BITS(inOptGlassDoor,1) == 0 THEN ; IF not glass door
-        PRINT "Wood door"
+    IF -BITS(inOptHandles, 1) THEN ; IF not glass door
+        PRINT "Handles"
         IF BITS(inWoodWidth51,1) THEN
             CALL WstFntHndlsHf51;Handles roughing
             CALL EstFntHndlsHf51
@@ -38,7 +39,7 @@
     END
 
     CALL WstFntDiscHf ;Cut out disc both sides
-    IF BITS(inWoodWidth51,1) == 0 THEN
+    IF BITS(inWoodWidth51,1) == 0 AND BITS(inOptHalfMoon,1) == 1 THEN
         CALL WstFntDiscHfLst
     END
 
@@ -46,7 +47,7 @@
     
     CALL EstFntDiscHf ;Cut out disc both sides
     CALL estfntdischftop
-    IF BITS(inWoodWidth51,1) == 0 THEN
+    IF BITS(inWoodWidth51,1) == 0 AND BITS(inOptHalfMoon,1) == 1 THEN
         CALL EstFntDiscHfLst
     END
 
@@ -64,12 +65,13 @@
         CALL EstFntWdDrHfLst
     END
 
-    IF -BITS(inOptDoorLock,1) THEN
-        PRINT "Lock"
-        CALL WstFntLockHf; Lock cut out with half inch bit
-    ELSE
-        PRINT "No lock"
-    END
+; Not using door lock option
+    ; IF -BITS(inOptHandles,1) THEN
+    ;     PRINT "Lock"
+    ;     CALL WstFntLockHf; Lock cut out with half inch bit
+    ; ELSE
+    ;     PRINT "No lock"
+    ; END
 
     ;===========Blade===================
     CALL changeTool(4, 0) ; First argument: current tool. Second requested tool. 4 for half inch, 2 quarter, 0 sawblade
@@ -78,23 +80,41 @@
         PRINT "Glass door"
         CALL WstFntGlsDrBlEW ;Glass door cut out with blade
         CALL WstFntGlsDrBlNS ;Glass door cut out with blade
+        IF BITS(inOptHandles, 1) THEN
+            IF BITS(inWoodWidth51,1) THEN
+                CALL WstFntHndlsBl51;Handles blade
+            ELSE
+                CALL WstFntHndlsBl475;Handles blade
+            END
+        END
         CALL EstFntGlsDrBlNS ;Glass door cut out with blade
+        IF BITS(inOptHandles, 1) THEN
+            IF BITS(inWoodWidth51,1) THEN
+                CALL EstFntHndlsBl51;Handles blade
+            ELSE
+                CALL EstFntHndlsBl475;Handles blade
+            END
+        END
         CALL EstFntGlsDrBlEW ;Glass door cut out with blade
     ELSE
         PRINT "Wood door"
         CALL WstFntWdDrBlEW;Blade NS
         CALL WstFntWdDrBlNS;Wood door cut out north south with blade
-        IF BITS(inWoodWidth51,1) THEN
-            CALL WstFntHndlsBl51;Handles blade
-        ELSE
-            CALL WstFntHndlsBl475;Handles blade
+        IF BITS(inOptHandles, 1) THEN
+            IF BITS(inWoodWidth51,1) THEN
+                CALL WstFntHndlsBl51;Handles blade
+            ELSE
+                CALL WstFntHndlsBl475;Handles blade
+            END
         END
         
         CALL EstFntWdDrBlNS;Wood door cut out north south with blade
-        IF BITS(inWoodWidth51,1) THEN
-            CALL EstFntHndlsBl51;Handles blade
-        ELSE
-            CALL EstFntHndlsBl475;Handles blade
+        IF BITS(inOptHandles, 1) THEN
+            IF BITS(inWoodWidth51,1) THEN
+                CALL EstFntHndlsBl51;Handles blade
+            ELSE
+                CALL EstFntHndlsBl475;Handles blade
+            END
         END
         CALL EstFntWdDrBlEW;Blade EW
     END

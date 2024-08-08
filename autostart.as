@@ -54,6 +54,7 @@
     inWoodWidth51 = 1034 ;1 if wood width is 5.1inches, 0 if wood width is 4.75in
     inManMoveDstnce = 1035 ; 1035-1037 inManualMoveDistance
     inDustBootUp = 1038
+    inProgOption4 = 1039
     
     PCABORT 2:
     PCABORT 3:
