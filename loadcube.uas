@@ -60,7 +60,4 @@ sendln 'LOAD robodkpaths\wstcbfnthndlshf.pg'
 sleep=1
 timeout=120
 wait 'File load'
-
-
-sendln 'PCEXECUTE autostart.pc'
 messagebox 'All paths loaded successfully'
