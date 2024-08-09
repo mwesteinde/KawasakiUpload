@@ -5,5 +5,5 @@
     BITS outToolUpdated, 1 = 1
     WAIT SIG(inProgramStart)
     BITS outToolUpdated, 1 = 0
-    BITS outProgRunning, 1 = 1
+    BITS outProgRunning, 1 = 1    
  .END
