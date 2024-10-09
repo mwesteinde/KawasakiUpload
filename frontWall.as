@@ -57,6 +57,7 @@
         PRINT "Glass door"
         CALL WstFntGlassDrHf ;Glass door cut out with half inch bit
         CALL EstFntGlassDrHf ;Glass door cut out with half inch bit
+        CALL homeRobot
     ELSE
         PRINT "Wood door"
         CALL WstFntWdDrHf;Wood door cut out with half inch bit

@@ -6,4 +6,17 @@
     WAIT SIG(inProgramStart)
     BITS outToolUpdated, 1 = 0
     BITS outProgRunning, 1 = 1
+
+    CALL EstFntDiscHf ;Cut out disc both sides
+    CALL estfntdischftop
+    CALL estfntwngmrkhf
+    CALL estfntdischfbot
+    CALL EstFntWdDrHf;Wood door cut out with half inch bit
+    CALL EstFntWdDrHfLst
+
+    CALL changeTool(4, 0)
+    CALL EstFntWdDrBlNS
+    CALL EstFntWdDrBlEW
+    CALL homeRobot
+    CALL changeTool(0, 4)
  .END
