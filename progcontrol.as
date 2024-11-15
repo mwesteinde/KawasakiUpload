@@ -23,18 +23,6 @@
     BITS outCurrentProgram, 4 = 0 ; Current program is programcontrol
     .programRequest = BITS(inProgramChoice, .programBits)
     BREAK
-    
-    ; IF SIG(inProgramHome) THEN
-    ;     BITS outProgRunning, 1 = 1
-    ;     CALL homeRobot
-    ;     BITS outProgRunning, 1 = 0
-    ; END
-
-    ; IF SIG(inProgramClean) THEN
-    ;     BITS outProgRunning, 1 = 1
-    ;     CALL cleanupPose
-    ;     BITS outProgRunning, 1 = 0
-    ; END
 
     IF SIG(inProgramStart) THEN
         IF .programrequest == .numProgToolChg THEN

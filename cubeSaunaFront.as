@@ -8,20 +8,23 @@
     BITS outProgRunning, 1 = 1
 
     ;===========Half Inch tool===================
-    CALL wstcbfntdoorhf
     CALL wstcbfnttopegehf
-    CALL wstcbfntedgehf
     CALL wstcbfnthndlshf
+    CALL wstcbfntdoorhf
+    CALL wstcbfntedgehf
     CALL estcbtopegehf
     CALL estcbedgehf
+    CALL estcbbackhf
+
 
     ;===========Blade===================
     
     CALL changeTool(4, 0)
     CALL wstcbfntedgebl
     CALL wstcbfntdoorblns
-    CALL wstcbfntdoorblew
     CALL wstcbfnthndlsbl
+    CALL wstcbfntdoorblew
+    CALL wstcbfntbackbl
     CALL estcbedgebl
     CALL changeTool(0,4)
  .END

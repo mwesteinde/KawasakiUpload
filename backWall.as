@@ -1,6 +1,7 @@
 .PROGRAM backWall()
     inOptWindow = 1021 ;Bit addresses for window option
     inOptHandles = 1022
+    inOptGlassDoorHandles = 1023
     PRINT "backwall"
 
     ;MUST have next three lines in all programs!
@@ -10,6 +11,16 @@
     WAIT SIG(inProgramStart)
     BITS outToolUpdated, 1 = 0
     BITS outProgRunning, 1 = 1
+
+    ;Glass door handles option
+    IF BITS(inOptGlassDoorHandles, 1) THEN
+        CALL changeTool(4,2)
+        CALL glsdrhndlholesqtr
+        CALL changeTool(2,4)
+        CALL glsdrhndlfntclrhf
+        CALL glsdrhndlcutlghf
+        CALL glsdrhndlcutsmhf
+    END
 
     ;===========Half Inch tool===================
     IF BITS(inOptHandles,1) THEN

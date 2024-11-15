@@ -55,15 +55,27 @@
     CALL estfntdischfbot
     IF -BITS(inOptGlassDoor,1) THEN
         PRINT "Glass door"
+        ACCEL 40 ALWAYS
+        DECEL 40 ALWAYS
         CALL WstFntGlassDrHf ;Glass door cut out with half inch bit
         CALL EstFntGlassDrHf ;Glass door cut out with half inch bit
+        ACCEL 100 ALWAYS
+        DECEL 100 ALWAYS
         CALL homeRobot
     ELSE
         PRINT "Wood door"
         CALL WstFntWdDrHf;Wood door cut out with half inch bit
+        ACCEL 40 ALWAYS
+        DECEL 40 ALWAYS
         CALL WstFntWdDrHfLst
+        ACCEL 100 ALWAYS
+        DECEL 100 ALWAYS
         CALL EstFntWdDrHf;Wood door cut out with half inch bit
+        ACCEL 40 ALWAYS
+        DECEL 40 ALWAYS
         CALL EstFntWdDrHfLst
+        ACCEL 100 ALWAYS
+        DECEL 100 ALWAYS
     END
 
 ; Not using door lock option
