@@ -27,7 +27,7 @@
         PRINT "No Ecut"
     END
 
-    IF -BITS(inOptHandles, 1) THEN ; IF not glass door
+    IF -BITS(inOptHandles, 1) THEN 
         PRINT "Handles"
         IF BITS(inWoodWidth51,1) THEN
             CALL WstFntHndlsHf51;Handles roughing
@@ -36,16 +36,24 @@
             CALL WstFntHndlsHf475
             CALL EstFntHndlsHf475
         END
+        CALL WstFntDiscHf ;Cut out disc both sides
+    ELSE
+        CALL WstBckDiscHf
     END
 
-    CALL WstFntDiscHf ;Cut out disc both sides
+    
     IF BITS(inWoodWidth51,1) == 0 AND BITS(inOptHalfMoon,1) == 1 THEN
         CALL WstFntDiscHfLst
     END
 
     CALL wstfntwngmrkhf
     
-    CALL EstFntDiscHf ;Cut out disc both sides
+
+    IF -BITS(inOptHandles, 1) THEN ; IF not glass door
+        CALL EstFntDiscHf ;Cut out disc both sides
+    ELSE
+        CALL EstBckDiscHf
+    END
     CALL estfntdischftop
     IF BITS(inWoodWidth51,1) == 0 AND BITS(inOptHalfMoon,1) == 1 THEN
         CALL EstFntDiscHfLst
