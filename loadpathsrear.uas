@@ -56,6 +56,24 @@ timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\Estfntdischfbot.pg'
 timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\Estbcksmwnhf.pg'
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstbcksmwnhf.pg'
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\Estbcksmwnblns.pg'
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\Estbcksmwnblew.pg'
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstbcksmwnblns.pg'
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstbcksmwnblew.pg'
+timeout=120
 
 wait 'File load'
 messagebox 'All paths loaded successfully'

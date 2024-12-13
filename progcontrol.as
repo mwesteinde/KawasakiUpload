@@ -9,7 +9,7 @@
     .numOption5 = 6
     .numOption6 = 7
     .numOption7 = 8
-    .numOptionCbeBck = 9
+    .numOption9 = 9
     .numProgToolChg = 10
     .numProgMoveRbt = 11
     .numProgHomeRbt = 12
@@ -102,9 +102,9 @@
             CALL cubeSaunaFront
             BITS outProgRunning, 1 = 0
         END
-        IF .programrequest == .numOptionCbeBck THEN
-            BITS outCurrentProgram, 4 = .numOptionCbeBck
-            CALL cubeSaunaBack
+        IF .programrequest == .numOption9 THEN
+            BITS outCurrentProgram, 4 = .numOption9
+            CALL Option9
             BITS outProgRunning, 1 = 0
         END
     END

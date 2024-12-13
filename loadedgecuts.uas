@@ -1,35 +1,31 @@
-timeout=240
+timeout=120
 sendln 'PCABORT'
 sendln 'PCABORT 2:'
 sendln 'PCABORT 3:'
 sendln 'ABORT'
 sendln 'PCKILL'
-sleep=1
 sendln '1'
 sendln 'PCKILL 2:'
-sleep=1
 sendln '1'
 sendln 'PCKILL 3:'
-sleep=1
 sendln '1'
 sendln 'KILL'
-sleep=1
 sendln '1'
-sendln 'LOAD robodkpaths\glsdrhndlholesqtr.pg'
+
+sendln 'LOAD robodkpaths\CalibEstNSEge.pg'
 sleep=1
 timeout=120
 wait 'File load'
-sendln 'LOAD robodkpaths\glsdrhndlcutsmhf.pg'
+sendln 'LOAD robodkpaths\CalibWstNSEge.pg'
 sleep=1
 timeout=120
 wait 'File load'
-sendln 'LOAD robodkpaths\glsdrhndlcutlghf.pg'
+sendln 'LOAD robodkpaths\CalibEstEWege.pg'
 sleep=1
 timeout=120
 wait 'File load'
-sendln 'LOAD robodkpaths\glsdrhndlfntclrhf.pg'
+sendln 'LOAD robodkpaths\CalibWstEWEge.pg'
+sleep=1
 timeout=120
 wait 'File load'
-sendln 'LOAD robodkpaths\glsdrhndlindexhf.pg'
-timeout=120
 messagebox 'All paths loaded successfully'

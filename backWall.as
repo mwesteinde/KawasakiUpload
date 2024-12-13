@@ -2,6 +2,7 @@
     inOptWindow = 1021 ;Bit addresses for window option
     inOptHandles = 1022
     inOptGlassDoorHandles = 1023
+    inOptSmallWindow = 1039
     PRINT "backwall"
 
     ;MUST have next three lines in all programs!
@@ -56,6 +57,14 @@
         PRINT "NoWindow"
     END
 
+    IF BITS(inOptSmallWindow,1) THEN
+        PRINT "STDWindow"
+        CALL WstBckSmWnHf
+        CALL EstBckSmWnHf
+    ELSE
+        PRINT "NoWindow"
+    END
+
     ;===========Blade===================
     IF BITS(inOptHandles,1) THEN
         CALL changeTool(4, 0)
@@ -73,15 +82,31 @@
             CALL EstBckSTDWnBLNS
             CALL EstBckSTDWnBLEW
         END
+        IF BITS(inOptSmallWindow,1) THEN
+            PRINT "SmallWindow"
+            CALL WstBckSmWnBLEW
+            CALL WstBckSmWnBLNS
+            CALL EstBckSmWnBLNS
+            CALL EstBckSmWnBLEW
+        END
+
         CALL changeTool(0,4)
     ELSE
-        IF BITS(inOptWindow,1) THEN
+        IF BITS(inOptWindow,1) OR BITS(inOptSmallWindow,1) THEN
             CALL changeTool(4, 0)
-            PRINT "STDWindow"
-            CALL WstBckSTDWnBLEW
-            CALL WstBckSTDWnBLNS
-            CALL EstBckSTDWnBLNS
-            CALL EstBckSTDWnBLEW
+            IF BITS(inOptWindow,1) THEN
+                PRINT "STDWindow"
+                CALL WstBckSTDWnBLEW
+                CALL WstBckSTDWnBLNS
+                CALL EstBckSTDWnBLNS
+                CALL EstBckSTDWnBLEW
+            ELSE
+                PRINT "SmallWindow"
+                CALL WstBckSmWnBLEW
+                CALL WstBckSmWnBLNS
+                CALL EstBckSmWnBLNS
+                CALL EstBckSmWnBLEW
+            END
             CALL changeTool(0, 4)
         ELSE
             PRINT "NoWindow"
