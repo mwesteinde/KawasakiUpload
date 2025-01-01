@@ -18,6 +18,7 @@
         CALL changeTool(4,2)
         CALL glsdrhndlholesqtr
         CALL changeTool(2,4)
+        CALL glsdrhndlindexhf
         CALL glsdrhndlfntclrhf
         CALL glsdrhndlcutlghf
         CALL glsdrhndlcutsmhf
