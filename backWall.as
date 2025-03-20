@@ -15,13 +15,23 @@
 
     ;Glass door handles option
     IF BITS(inOptGlassDoorHandles, 1) THEN
-        CALL changeTool(4,2)
-        CALL glsdrhndlholesqtr
-        CALL changeTool(2,4)
-        CALL glsdrhndlindexhf
-        CALL glsdrhndlfntclrhf
-        CALL glsdrhndlcutlghf
-        CALL glsdrhndlcutsmhf
+        IF BITS(inWoodWidth51,1) THEN
+            CALL changeTool(4,2)
+            CALL gldrhdlhlsqtr51
+            CALL changeTool(2,4)
+            CALL gldrhdlidxhf51
+            CALL gldrhdlclrhf51
+            CALL gldrhdllghf51
+            CALL gldrhdlsmhf51
+        ELSE
+            CALL changeTool(4,2)
+            CALL gldrhdlhlsqtr47
+            CALL changeTool(2,4)
+            CALL gldrhdlidxhf47
+            CALL gldrhdlclrhf47
+            CALL gldrhdllghf47
+            CALL gldrhdlsmhf51
+        END
     END
 
     ;===========Half Inch tool===================

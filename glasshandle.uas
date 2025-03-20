@@ -15,21 +15,40 @@ sendln '1'
 sendln 'KILL'
 sleep=1
 sendln '1'
-sendln 'LOAD robodkpaths\glsdrhndlholesqtr.pg'
+sendln 'LOAD robodkpaths\gldrhdlhlsqtr51.pg'
 sleep=1
 timeout=120
 wait 'File load'
-sendln 'LOAD robodkpaths\glsdrhndlcutsmhf.pg'
+sendln 'LOAD robodkpaths\gldrhdlsmhf51.pg'
 sleep=1
 timeout=120
 wait 'File load'
-sendln 'LOAD robodkpaths\glsdrhndlcutlghf.pg'
+sendln 'LOAD robodkpaths\gldrhdlidxhf51.pg'
 sleep=1
 timeout=120
 wait 'File load'
-sendln 'LOAD robodkpaths\glsdrhndlfntclrhf.pg'
+sendln 'LOAD robodkpaths\gldrhdlclrhf47.pg'
+sleep=1
 timeout=120
 wait 'File load'
-sendln 'LOAD robodkpaths\glsdrhndlindexhf.pg'
+sendln 'LOAD robodkpaths\gldrhdllghf47.pg'
+sleep=1
 timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlhlsqtr47.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlidxhf47.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdllghf51.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlclrhf51.pg'
+sleep=1
+timeout=120
+wait 'File load'
 messagebox 'All paths loaded successfully'
