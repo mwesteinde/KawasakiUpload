@@ -28,7 +28,7 @@
     ;outtooly is 157-168
     ;outtoolz is 169-180
     
-    inTurnMotorOn = 1001 ; Dedicated input signal
+    inTurnMotorOn = 1001 ; Dedicated input signal, set from controller
     inResetError = 1002 ; Dedicated input
     inStartCycle = 1003 ; Dedicated input
     inResetProgram = 1004 ; Dedicated input
@@ -37,23 +37,23 @@
     inProgramHome = 1007
     inMotorOff = 1008
     inToolReleased = 1009
-    inCurrentTool = 1010 ; 1010-1013
+    inCurrentTool = 1010 ; 1010-1013. 
     inEStopOff = 1014 ; Dedicated input
-    inSpindleOff = 1016
+    inSpindleOff = 1016 ; 1 if spindle is stopped
     inProgramChoice = 1017 ;1017-1020
     inProgOption1 = 1021
     inProgOption2 = 1022
     inProgOption3 = 1023
     inRequestedTool = 1024 ; 1024-1027
-    inProgSelected = 1028 ;Flag for when program is selected
-    inProgramClean = 1029
-    inxmove = 1030
-    inymove = 1031
-    inzmove = 1032
-    inmovepositive = 1033
+    inProgSelected = 1028 ; Flag for when program is selected
+    inProgramClean = 1029 ; Unused
+    inxmove = 1030 ; Manual movement in x
+    inymove = 1031 ; Manual movement in y
+    inzmove = 1032 ; Manual movement in z
+    inmovepositive = 1033 ; 1 to move in positive direction, 0 otherwise
     inWoodWidth51 = 1034 ;1 if wood width is 5.1inches, 0 if wood width is 4.75in
-    inManMoveDstnce = 1035 ; 1035-1037 inManualMoveDistance
-    inDustBootUp = 1038
+    inManMoveDstnce = 1035 ; 1035-1037 inManualMoveDistance, defines the distance robot goes per manual move
+    inDustBootUp = 1038 ; 1 if dust boot is raised
     inProgOption4 = 1039
     
     PCABORT 2:
@@ -62,5 +62,5 @@
     WAIT SIG(inEStopOff) ; E stop ethercat
     WAIT SWITCH(POWER)
     WAIT NOT SIG(outError)
-    MC EXECUTE pg00, -1
+    MC EXECUTE pg00, -1 ; progcontrol.as
 .END

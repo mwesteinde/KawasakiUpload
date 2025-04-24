@@ -68,4 +68,16 @@ sendln 'LOAD robodkpaths\wstcbfntbackbl.pg'
 sleep=1
 timeout=120
 wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfntgldrblew.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfntgldrblNS.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\wstcbfntglsdrhf.pg'
+sleep=1
+timeout=120
+wait 'File load'
 messagebox 'All paths loaded successfully'

@@ -19,7 +19,6 @@
             CALL changeTool(4,2)
             CALL gldrhdlhlsqtr51
             CALL changeTool(2,4)
-            CALL gldrhdlidxhf51
             CALL gldrhdlclrhf51
             CALL gldrhdllghf51
             CALL gldrhdlsmhf51
@@ -27,7 +26,6 @@
             CALL changeTool(4,2)
             CALL gldrhdlhlsqtr47
             CALL changeTool(2,4)
-            CALL gldrhdlidxhf47
             CALL gldrhdlclrhf47
             CALL gldrhdllghf47
             CALL gldrhdlsmhf51

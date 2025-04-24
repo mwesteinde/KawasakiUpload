@@ -1,5 +1,6 @@
 .PROGRAM cubesaunafront()
     inOptRearWall = 1021
+    inOptGlassDoor = 1022
     ;MUST have next three lines in all programs!
     .firstToolIndex = 4 ;First tool - 4 for half inch, 2 quarter, 0 sawblade
     BITS outRequestTool, 4 = .firstToolIndex
@@ -24,10 +25,14 @@
         CALL estcbedgebl
         CALL changeTool(0,4)
     ELSE
-        ;===========Half Inch tool===================
         CALL wstcbfnttopegehf
         CALL wstcbfnthndlshf
-        CALL wstcbfntdoorhf
+        ;===========Half Inch tool===================
+        IF -BITS(inOptGlassDoor, 1) THEN
+            CALL wstcbfntglsdrhf
+        ELSE
+            CALL wstcbfntdoorhf
+        END
         CALL wstcbfntedgehf
         CALL estcbtopegehf
         CALL estcbedgehf
@@ -38,9 +43,17 @@
         
         CALL changeTool(4, 0)
         CALL wstcbfntedgebl
-        CALL wstcbfntdoorblns
+        IF -BITS(inOptGlassDoor, 1) THEN
+            CALL wstcbfntgldrblNS
+        ELSE
+            CALL wstcbfntdoorblns
+        END
         CALL wstcbfnthndlsbl
-        CALL wstcbfntdoorblew
+        IF -BITS(inOptGlassDoor, 1) THEN
+            CALL wstcbfntgldrblew
+        ELSE
+            CALL wstcbfntdoorblew
+        END
         CALL wstcbfntbackbl
         CALL estcbedgebl
         CALL changeTool(0,4)
