@@ -3,6 +3,7 @@
     inOptHandles = 1022
     inOptGlassDoorHandles = 1023
     inOptSmallWindow = 1039
+    inOptChimney = 1040 ; NEW: Assigned a new address for the Chimney option
     PRINT "backwall"
 
     ;MUST have next three lines in all programs!
@@ -73,6 +74,17 @@
     ELSE
         PRINT "NoWindow"
     END
+
+      ; NEW SECTION FOR CHIMNEY LOGIC
+  ; If the chimney option IS selected, then run the two stove programs.
+  ; If it is NOT selected, this block is skipped.
+  IF BITS(inOptChimney, 1) THEN
+      PRINT "Chimney Option Selected - Running Stove Programs"
+      CALL WstBackStveHf
+      CALL EstBackStvHf
+  ELSE
+      PRINT "Standard Back - SKIPPING Stove Programs"
+  END
 
     ;===========Blade===================
     IF BITS(inOptHandles,1) THEN

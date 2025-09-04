@@ -74,6 +74,15 @@ timeout=120
 wait 'File load'
 sendln 'LOAD robodkpaths\wstbcksmwnblew.pg'
 timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\EstBckStveCutHf.pg'
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\WstBckStveCutHf.pg'
+timeout=120
+
+
+
 
 wait 'File load'
 messagebox 'All paths loaded successfully'

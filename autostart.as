@@ -55,6 +55,7 @@
     inManMoveDstnce = 1035 ; 1035-1037 inManualMoveDistance, defines the distance robot goes per manual move
     inDustBootUp = 1038 ; 1 if dust boot is raised
     inProgOption4 = 1039
+    inProgOption5 = 1040
     
     PCABORT 2:
     PCABORT 3:

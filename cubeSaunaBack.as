@@ -1,3 +1,5 @@
+;UNUSED PROGRAM
+
 .PROGRAM option9()
     ;MUST have next three lines in all programs!
     .firstToolIndex = 4 ;First tool - 4 for half inch, 2 quarter, 0 sawblade
