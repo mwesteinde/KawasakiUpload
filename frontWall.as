@@ -19,9 +19,9 @@
     IF -BITS(inOptEcut,1) THEN
         PRINT "Ecut"
         IF BITS(inWoodWidth51,1) THEN
-            CALL WstFntEcutHf51 ;TODO: create
+            CALL WstFntEcutHf51
         ELSE
-            CALL WstFntEcutHf475 ;TODO: create
+            CALL WstFntEcutHf475 
         END
     ELSE
         PRINT "No Ecut"
@@ -30,7 +30,7 @@
     IF -BITS(inOptHandles, 1) THEN 
         PRINT "Handles"
         IF BITS(inWoodWidth51,1) THEN
-            CALL WstFntHndlsHf51;Handles roughing
+            CALL WstFntHndlsHf51 ;Handles roughing
             CALL EstFntHndlsHf51
         ELSE
             CALL WstFntHndlsHf475
@@ -85,14 +85,6 @@
         ACCEL 100 ALWAYS
         DECEL 100 ALWAYS
     END
-
-; Not using door lock option
-    ; IF -BITS(inOptHandles,1) THEN
-    ;     PRINT "Lock"
-    ;     CALL WstFntLockHf; Lock cut out with half inch bit
-    ; ELSE
-    ;     PRINT "No lock"
-    ; END
 
     ;===========Blade===================
     CALL changeTool(4, 0) ; First argument: current tool. Second requested tool. 4 for half inch, 2 quarter, 0 sawblade

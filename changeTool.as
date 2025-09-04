@@ -10,6 +10,7 @@
 ;     5: 
 ;       8: no tool
 ;   Defined
+;   TO define, write TOOL 74.135, 193.39, 512.99, 89.944, 45.018, 1.472 then write HERE toolpose[0-8] on krterm
 ;   toolpose[0-8]
 ;   changeToolHome
     PRINT .currentTool
