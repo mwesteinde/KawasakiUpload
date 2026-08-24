@@ -1,0 +1,31 @@
+timeout=120
+sendln 'PCABORT'
+sendln 'PCABORT 2:'
+sendln 'PCABORT 3:'
+sendln 'ABORT'
+sendln 'PCKILL'
+sendln '1'
+sendln 'PCKILL 2:'
+sendln '1'
+sendln 'PCKILL 3:'
+sendln '1'
+sendln 'KILL'
+sendln '1'
+
+sendln 'LOAD robodkpaths\CalibEstNSEge.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\CalibWstNSEge.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\CalibEstEWege.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\CalibWstEWEge.pg'
+sleep=1
+timeout=120
+wait 'File load'
+messagebox 'All paths loaded successfully'

@@ -1,3 +1,0 @@
-timeout=360
-wait 'File load'
-sendln 'LOAD robodkpaths\EstFntDiscHf.pg'

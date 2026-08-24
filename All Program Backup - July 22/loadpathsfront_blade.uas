@@ -1,0 +1,68 @@
+timeout=240
+sendln 'PCABORT'
+sendln 'PCABORT 2:'
+sendln 'PCABORT 3:'
+sendln 'ABORT'
+sendln 'PCKILL'
+sleep=1
+sendln '1'
+sendln 'PCKILL 2:'
+sleep=1
+sendln '1'
+sendln 'PCKILL 3:'
+sleep=1
+sendln '1'
+sendln 'KILL'
+sleep=1
+sendln '1'
+
+sendln 'LOAD robodkpaths\WstFntHndlsBl51.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\WstFntHndlsBl475.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\WstFntWdDrBlNS.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\WstFntWdDrBlEW.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\WstFntGlsDrBlNS.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\WstFntGlsDrBlEW.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\EstFntWdDrBLNS.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\EstFntWdDrBLEW.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\EstFntGlsDrBLNS.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\EstFntGlsDrBLEW.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\EstFntHndlsBl51.pg'
+sleep=1
+timeout=180
+wait 'File load'
+sendln 'LOAD robodkpaths\EstFntHndlsBl475.pg'
+sleep=1
+timeout=180
+wait 'File load'
+
+messagebox 'All paths loaded successfully'

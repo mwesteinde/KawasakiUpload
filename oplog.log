@@ -1,0 +1,53 @@
+Press SPACE key to continue.                                                    
+ 737 - [26/08/21 20:46:18] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 738 - [26/08/21 20:46:18] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 739 - [26/08/21 20:46:18] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 740 - [26/08/21 20:46:18] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 741 - [26/08/21 20:46:18] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 742 - [26/08/21 20:46:18] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 743 - [26/08/21 20:46:17] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 744 - [26/08/21 20:46:17] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 745 - [26/08/21 20:46:17] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 746 - [26/08/21 20:46:17] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 747 - [26/08/21 20:46:17] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 748 - [26/08/21 20:46:16] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 749 - [26/08/21 20:46:16] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 750 - [26/08/21 20:46:16] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 751 - [26/08/21 20:46:16] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 752 - [26/08/21 20:46:16] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 753 - [26/08/21 20:46:16] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 754 - [26/08/21 20:46:15] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 755 - [26/08/21 20:46:15] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 756 - [26/08/21 20:46:15] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 757 - [26/08/21 20:46:15] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 758 - [26/08/21 20:46:15] (SIGNAL:00) [  PNL ] CYCLE START                     
+ 759 - [26/08/21 20:46:15] (SIGNAL:00) [  PNL ] CYCLE START                     
+Press SPACE key to continue.                                                    
+>directory                                                                      
+Program                                                                         
+ aakris    acalibhftopbt   autostart.pc   backwall   calibestewege              
+ calibestnsege   calibhf90degbot   calibhf90degtop   calibhfleftbot             
+ calibhflefttop   calibhfrghtbot   calibhfrghttop   calibsawleftbot             
+ calibsawlefttop   calibsawrghtbot   calibsawrghttop   calibwstewege            
+ calibwstnsege   changetool   cleanuppose   cubesaunaback   cubesaunafront      
+ cubewndwhf   cubewndwnsbl   estbckchimyhf   estbckdischf   estbcksmwnblew      
+ estbcksmwnblns   estbcksmwnhf   estbckstdwnblew   estbckstdwnblns              
+ estbckstdwnhf   estbckstvecuthf   estbckventhf   estbckwngmark                 
+ estbckwngmrkhf   estcbbackhf   estcbedgebl   estcbedgehf   estcbtopegehf       
+ estfntdischf   estfntdischfbot   estfntdischflst   estfntdischftop             
+ estfntdrqtr   estfntedgecalib   estfntestcalib   estfntewegecali               
+ estfntglassdrhf   estfntgldrblew   estfntglsdrblew   estfntglsdrblns           
+ estfnthftest   estfnthndlsbl   estfnthndlsbl47   estfnthndlsbl51               
+ estfnthndlshf   estfnthndlshf47   estfnthndlshf51   estfntlockhf               
+ estfntnsegecali   estfntwddrblew   estfntwddrblns   estfntwddrhf               
+ estfntwddrhflst   estfntwngmrk   estfntwngmrkhf   frontwall   gldrhdlclrhf47   
+ gldrhdlclrhf51   gldrhdlhlsqtr47   gldrhdlhlsqtr51   gldrhdlidxhf47            
+ gldrhdlidxhf51   gldrhdllghf47   gldrhdllghf51   gldrhdlsmhf51                 
+ glsdrhndlcutout   handlessevenbl   handlessevenhf   homerobot   homerobot1000  
+ homerobot600   manualmoverobot   mdfbasecalib_ho   mdfsacedgebl                
+ movetocalibrate   option    option3   option4   option5   option6   option7    
+ option9   pg00      posedata.pc   wings    *wings4_75est   wings4_75wst        
+Press SPACE key to continue.                                                    
+>TIME                                                                           
+TIME      26-08-23(Sun) 19:33:51                                                
+Change? (If not, Press RETURN only.)                                            

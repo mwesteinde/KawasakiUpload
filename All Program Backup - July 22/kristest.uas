@@ -1,0 +1,10 @@
+timeout=120
+sendln 'load robodkpaths/krisbrdholehf.pg'
+wait 'File load'
+sendln 'load robodkpaths/krisbrdholehf.pg'
+wait 'File load'
+sendln 'load robodkpaths/krisbrddrinkhf.pg'
+wait 'File load'
+sendln 'load robodkpaths/krisbrdsaw.pg'
+wait 'File load'
+messagebox 'All paths loaded successfully'

@@ -1,0 +1,54 @@
+timeout=240
+sendln 'PCABORT'
+sendln 'PCABORT 2:'
+sendln 'PCABORT 3:'
+sendln 'ABORT'
+sendln 'PCKILL'
+sleep=1
+sendln '1'
+sendln 'PCKILL 2:'
+sleep=1
+sendln '1'
+sendln 'PCKILL 3:'
+sleep=1
+sendln '1'
+sendln 'KILL'
+sleep=1
+sendln '1'
+sendln 'LOAD robodkpaths\gldrhdlhlsqtr51.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlsmhf51.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlidxhf51.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlclrhf47.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdllghf47.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlhlsqtr47.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlidxhf47.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdllghf51.pg'
+sleep=1
+timeout=120
+wait 'File load'
+sendln 'LOAD robodkpaths\gldrhdlclrhf51.pg'
+sleep=1
+timeout=120
+wait 'File load'
+messagebox 'All paths loaded successfully'
