@@ -6,14 +6,9 @@
     inOptHalfMoon = 1039
     PRINT "frontwall"
 
-    ;MUST have next six lines in all programs! Only change first tool index
-    ;CHANGE
-    .firstToolIndex = 4 ;First tool - 4 for half inch, 2 quarter, 0 sawblade
-    ;DONT CHANGE
-    BITS outRequestTool, 4 = .firstToolIndex
-    BITS outToolUpdated, 1 = 1
-    WAIT SIG(inProgramStart)
-    BITS outToolUpdated, 1 = 0
+    ; First tool is set in firstTool[] in autostart.as and sent by programcontrol.pc
+    ; when this program is selected. Update it there if the first tool changes.
+    ; No start wait: programcontrol.pc only runs this program after the PLC start signal
     BITS outProgRunning, 1 = 1
     
     IF -BITS(inOptEcut,1) THEN
