@@ -8,7 +8,8 @@
     ; move the robot or set TOOL, so all motion stays in pcrun and its callees.
     ;
     ; Outputs owned here: outCurrentProgram, outProgRunning, outToolUpdated,
-    ; outPcHeartbeat, and outRequestTool while no robot program is running
+    ; outPcHeartbeat, outFinalToolChange (cleared here, set by the cutting programs),
+    ; and outRequestTool while no robot program is running
     ; (changeTool writes outRequestTool during a run).
     ;
     ; Globals are initialised and described in autostart.pc.
@@ -71,6 +72,7 @@
             pcToolSent = 0
         END
         BITS outProgRunning, 1 = 0
+        BITS outFinalToolChange, 1 = 0
         .req = BITS(inProgramChoice, 4)
         IF SIG(inProgSelected) AND (.req >= 1) AND (.req <= 14) THEN
             BITS outCurrentProgram, 4 = .req

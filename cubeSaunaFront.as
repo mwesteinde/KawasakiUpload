@@ -49,6 +49,7 @@ CALL changeTool(4, 0)
                 END
             END
             CALL estcbedgebl
+            BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
             CALL changeTool(0,4)
     ELSE
         PRINT "Half inch and blade (entire program)"
@@ -68,6 +69,7 @@ CALL changeTool(4, 0)
             CALL changeTool(4, 0)
             CALL wstcbfntedgebl
             CALL estcbedgebl
+            BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
             CALL changeTool(0,4)
         ELSE
         PRINT "Front Wall Selected"
@@ -130,6 +132,7 @@ CALL changeTool(4, 0)
                 END
             END
             CALL estcbedgebl
+            BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
             CALL changeTool(0,4)
         END
     END

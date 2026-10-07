@@ -24,6 +24,7 @@
     outCurrentProgram = 119 ;119-122
     outAtClean = 123 ; Dedicated output
     outPcHeartbeat = 124 ; programcontrol.pc heartbeat, toggled every pass (PLC watchdog)
+    outFinalToolChange = 125 ; Set before a program's last tool change, cleared by programcontrol.pc when idle
     ;outzpose is 129-144
     ;outtoolx is 145-156
     ;outtooly is 157-168

@@ -127,5 +127,6 @@
         CALL EstFntWdDrBlEW;Blade EW
     END
     CALL homeRobot
+    BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
     CALL changeTool(0, 4)
  .END

@@ -27,6 +27,7 @@
         CALL EstFntWdDrBlEW;Blade EW
 
         CALL homeRobot
+        BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
         CALL changeTool(0, 4)
     END
 
@@ -48,6 +49,7 @@
         CALL EstFntGlsDrBlEW ;Glass door cut out with blade
 
         CALL homeRobot
+        BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
         CALL changeTool(0, 4)
     END
 
@@ -57,6 +59,7 @@
         CALL EstBckSTDWnBLNS
         CALL EstBckSTDWnBLEW
         CALL homeRobot
+        BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
         CALL changeTool(0, 4)
     END
 
@@ -66,6 +69,7 @@
         CALL EstBckSmWnBLNS
         CALL EstBckSmWnBLEW
         CALL homeRobot
+        BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
         CALL changeTool(0, 4)
     END
  .END

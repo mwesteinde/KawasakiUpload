@@ -116,6 +116,7 @@
             CALL EstBckSmWnBLEW
         END
 
+        BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
         CALL changeTool(0,4)
     ELSE
         IF BITS(inOptWindow,1) OR BITS(inOptSmallWindow,1) THEN
@@ -133,6 +134,7 @@
                 CALL EstBckSmWnBLNS
                 CALL EstBckSmWnBLEW
             END
+            BITS outFinalToolChange, 1 = 1 ; Last tool change, nothing is cut after it: the PLC does not hold for Tool Loaded
             CALL changeTool(0, 4)
         ELSE
             PRINT "NoWindow"
