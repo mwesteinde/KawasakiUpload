@@ -61,7 +61,7 @@
     END
     BITS outCurrentTool, 4 = .requestedTool
     PRINT .requestedTool
-    DELAY(0.1)
+    TWAIT 0.1 ; Not DELAY: DELAY is a motion instruction, so a PLC hold here stopped the program ending
  .END
 
 .PROGRAM homeRobot600()

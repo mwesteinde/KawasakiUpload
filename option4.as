@@ -8,8 +8,8 @@
     CALL cubewndwhf
     CALL changeTool(4, 0)
     CALL cubewndwNSbl
-    CALL changeTool(0, 4)
     CALL homeRobot
+    CALL changeTool(0, 4)
 
 
  .END
